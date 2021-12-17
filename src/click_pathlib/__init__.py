@@ -25,4 +25,4 @@ class Path(click.Path):
         Return a ``Path`` from the string ``click`` would have created with
         the given options.
         """
-        return pathlib.Path(super().convert(value=value, param=param, ctx=ctx))
+        return pathlib.Path(super().convert(value=value, param=param, ctx=ctx)).expanduser()
